@@ -18,7 +18,7 @@
                     </li>
                     <li class="page-scroll">
                       <div id="custom-search-input">
-                        <form action="<?php echo makePath('users/search'); ?>" method="post" class="navbar-form navbar-right" role="search">
+                        <form action="#" method="post" class="navbar-form navbar-right" role="search">
                             <div class="input-group">
                               <input type="text" class="form-control" name="search_word" placeholder="ユーザ検索">
                               <span class="input-group-btn">
@@ -32,16 +32,16 @@
                     </li>
 
                     <li class="page-scroll">
-                        <a href="<?php echo makePath('users/mypage/'); ?><?php echo $_SESSION['user_id']; ?>/<?php echo getFirstListId($_SESSION['user_id']); ?>">マイページ</a>
+                        <a href="#">マイページ</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="<?php echo makePath('actions/index/'); ?><?php echo $_SESSION['user_id']; ?>">タイムライン</a>
+                        <a href="#">タイムライン</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="<?php echo makePath('items/trend'); ?>">トレンディング</a>
+                        <a href="#">トレンディング</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="<?php echo makePath('users/logout'); ?>">ログアウト</a>
+                        <a href="#">ログアウト</a>
                     </li>
                 </ul>
             </div>
