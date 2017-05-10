@@ -1,131 +1,45 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Bucket Lists</title>
-
-
-    <link rel="stylesheet" type="text/css" href="/bucket_lists/webroot/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/bucket_lists/webroot/assets/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/bucket_lists/webroot/assets/css/main.css">
- 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-  </head>
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#page-top">BUCKET LISTS</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">マイページ</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">タイムライン</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">トレンディング</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-
-    <div class="container-fluid" id="pf-top">
-      <div class="row">
-        <div class="col-md-4 content-margin-top">
-            <header id="page-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <img class="img-responsive img-circle" src="/app/assets/images/plofile_fb_n.jpg" alt="" width="200" height="200">
-                            <div class="intro-text">
-                                <span class="name">masaaki kubo</span>
-                                <p class="skills">プロフィール文</p>
-                                <hr class="star-light">
-                            </div>
-                            <nav class="nav nav-tabs" style="width: 100%;">
-                                <ul class="nav nav-tabs nav-justified">
-                                    <li><a href="">バケットリスト</a></li>
-                                    <li><a href="">達成リスト</a></li>
-                                    <li><a href="">ゴミ箱リスト</a></li>
-                                    <li class="active"><a href="/bucket_lists/views_test/users/followings.html">フォロー</a></li>
-                                    <li><a href="/bucket_lists/views_test/users/followers.html">フォロワー</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container-fluid content-main">
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2 content-margin-top">
-
-
-            <div class="msg">
-              <img class="img-responsive img-circle" src="http://c85c7a.medialib.glogster.com/taniaarca/media/71/71c8671f98761a43f6f50a282e20f0b82bdb1f8c/blog-images-1349202732-fondo-steve-jobs-ipad.jpg" width="50" height="50">
-              <p><a href=""><span class="name"> Seed kun </span></a><a href="" class="btn btn-xs btn-default" style="float: right;">フォローを外す</a></p>
-
-            </div>
-
-
-            <div class="msg">
-              <img class="img-responsive img-circle" src="http://c85c7a.medialib.glogster.com/taniaarca/media/71/71c8671f98761a43f6f50a282e20f0b82bdb1f8c/blog-images-1349202732-fondo-steve-jobs-ipad.jpg" width="50" height="50">
-              <p><a href=""><span class="name"> Seed kun </span></a><a href="" class="btn btn-xs btn-default" style="float: right;">フォローを外す</a></p>
-
-            </div>
-
-
-            <div class="msg">
-              <img class="img-responsive img-circle" src="http://c85c7a.medialib.glogster.com/taniaarca/media/71/71c8671f98761a43f6f50a282e20f0b82bdb1f8c/blog-images-1349202732-fondo-steve-jobs-ipad.jpg" width="50" height="50">
-              <p><a href=""><span class="name"> Seed kun </span></a><a href="" class="btn btn-xs btn-default" style="float: right;">フォローを外す</a></p>
-
-            </div>
-
+              <!-- フォローされている人の一覧 -->
+ <div class="container">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="content-main">
+              <section class="col-sm-8 col-xs-offset-2 main-content">
+                <div class="follow_follower_list">
+                    <h4><i class="fa fa-user-circle" aria-hidden="true"></i>  follower</h4>
+              <ul class="list-unstyled">
+              <% @users.each do |user| %>
+                <% if false %>
+                     <a href="#">
+                     <li class="follow_followers">
+                            <img class="img-circle" src="/plofile_fb_n.png" width="50" height="50">
+                            <span><%= user.name %></span>
+                            <a href="#" class="btn btn-pink" style="float: right;">
+                                フォロー</a>
+                            </li>
+                            </a>
+                    <% elsif current_user.id == user.id %>
+                        <a href="#">
+                        <li class="follow_followers">
+                            <img class="img-circle" src="/plofile_fb_n.png" width="50" height="50">
+                            <span><%= user.name %></span>
+                        </li>
+                        </a>
+                    <% else %>
+                      <a href="#">
+                      <li class="follow_followers">
+                          <img class="img-circle" src="#" width="50" height="50">
+                          <span><%= user.name %></span>
+                          <a href="#" class="btn btn-default" style="float: right;">
+                              フォローを外す
+                          </a>
+                          </li>
+                        </a>
+                  <% end %>
+              <% end %>
+              </ul>
+              </div>
+            </section>
           </div>
         </div>
-
-
-
-    </div>
-
-    <div class="content-wrapper">
-
-
-        <footer class="container-fluid" style="min-height:200px; background-color:#18bc9c;color:#fff;text-align:center;padding-top:50px;">
-            BUCKET LISTS 
-        </footer>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/bucket_lists/webroot/assets/js/bootstrap.min.js"></script>
-  </body>
-</html>
+      </div>
+  </div>
