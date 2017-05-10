@@ -18,8 +18,10 @@ class ItemsController < ApplicationController
   end
 
   def trend
-    @items = Item.all
     @genre = params[:hot_new]
+    if @genre == "new"
+      @items = Item.where(parent_id: nil).order('created_at DESC')
+    end
   end
 
   private
