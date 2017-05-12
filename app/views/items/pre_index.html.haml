@@ -1,0 +1,76 @@
+.container-fluid
+  .row{:style => "background-color:#fafafa;"}
+    / sidebar　左ページ　リスト一覧
+    %section.col-sm-4.sidebar
+      %ul.list-unstyled
+        - @lists.each do |list|
+          %a{:href => "#"}
+            %li.active
+              = list.name
+              - if true
+                %p
+                  %a#button{"data-target" => "#edit_list", "data-title" => "", "data-toggle" => "modal", :href => ""}
+                  = list.name
+                  " data-id="#{list.id}"&gt;
+                  %i.fa.fa-pencil{"aria-hidden" => "true"}
+    - if true
+      %button.btn.btn-pink{"data-target" => "#add_list", "data-toggle" => "modal", :type => "button"} &#x30EA;&#x30B9;&#x30C8;&#x3092;&#x8FFD;&#x52A0;
+  / main 右ページ　項目一覧
+  %section.col-sm-8.main-content
+    / 項目追加
+    - if true
+      /
+        form method="post" action="">
+        <div class="input-group">
+        <input type="text" class="form-control" placeholder="+項目を追加する">
+        <span class="input-group-btn">
+        <button class="btn btn-pink" type="button" data-toggle="modal" data-target="#add_new" data-name="item_id">add</button>
+        </span>
+        </div>
+        </form
+      %br/
+      %button.btn.btn-pink.btn-block{"data-target" => "#add_new", "data-toggle" => "modal", :type => "button"} +&#x9805;&#x76EE;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;
+      %br/
+    / 項目一覧
+    %ul.list-unstyled
+      - @items.each_with(2) do |item, i|
+        %a{"data-target" => "#show_item", "data-title" => "", "data-toggle" => "modal", :href => ""}
+        = item.name
+        " data-id="#{item.id}" data-comment="#{item.comment}" data-deadline="#{item.deadline}" #{# item.status == 1 ? 'data-status=doing' : 'data-status=done'} data-priority="#{item.priority}"&gt;
+        %li
+          %dl
+            %dt
+              = # if(item.status == 2){' class=success'}elsif(item.status == 3){' class=trash'}
+              %span
+                - i
+              = item.name
+            - if false  # true  item.status == 1
+              %dd
+                %a{"data-target" => "#edit_item", "data-title" => "", "data-toggle" => "modal", :href => ""}
+                = item.name
+                " data-id="#{item.id}" data-comment="#{item.comment}" data-deadline="#{item.deadline}" data-priority="#{item.priority}"&gt;
+                %i.fa.fa-pencil{"aria-hidden" => "true"}
+            %dd
+              %a{"data-target" => "#trash_item", "data-title" => "", "data-toggle" => "modal", :href => ""}
+              = item.name
+              " data-id="#{item.id}"&gt;
+              %i.fa.fa-trash-o{"aria-hidden" => "true"}
+          %dd
+            %a{"data-target" => "#success_item", "data-title" => "", "data-toggle" => "modal", :href => ""}
+            = item.name
+            " data-id="#{item.id}"&gt;
+            %i.fa.fa-check-circle-o{"aria-hidden" => "true"}
+    .status-icon
+      %p.calendar= item.deadline
+      - if true #そのitemをいいねしてる？
+        %p
+          %a{:href => "#"}
+            %i.fa.fa-smile-o{"aria-hidden" => "true"}>
+            4
+      - else
+        %p
+          %a{:href => "#"}
+            %i.fa.fa-smile-o{"aria-hidden" => "true", :style => "color:#00bcd4;"}>
+            6
+      %p
+        %img{:src => "#"}/

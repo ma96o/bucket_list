@@ -1,0 +1,18 @@
+#edit_success.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4
+          %i.fa.fa-pencil{"aria-hidden" => "true"}>
+           達成コメント編集
+      %form{:action => "#", :method => "post"}
+        .modal-body
+          %p.modal-title
+          %textarea#comment.form-control{:name => "comment", :rows => "6", :type => "text", :value => ""}
+          %input#hidden{:name => "id", :type => "hidden"}/
+        .modal-footer
+          %button#modal-save.btn.btn-pink{:type => "submit"}
+            %i.fa.fa-pencil{"aria-hidden" => "true"}>
+             更新

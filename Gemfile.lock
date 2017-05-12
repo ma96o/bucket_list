@@ -56,6 +56,8 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    erb2haml (0.1.5)
+      html2haml
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -193,6 +195,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
+  erb2haml
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)

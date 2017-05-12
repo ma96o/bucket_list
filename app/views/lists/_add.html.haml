@@ -1,0 +1,16 @@
+#add_list.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4
+          %i.fa.fa-list-ul{"aria-hidden" => "true"}>
+           リストを追加
+      %form{:action => "<?php echo makePath('lists/create'); ?>", :method => "post"}
+        .modal-body
+          %label リスト名
+          %input.form-control{:name => "list_name", :placeholder => "リスト名を入力してください", :type => "text"}/
+          %input{:name => "user_id", :type => "hidden", :value => "<?php echo $_SESSION['user_id']; ?>"}/
+        .modal-footer
+          %button#modal-save.btn.btn-pink{:type => "submit"} add

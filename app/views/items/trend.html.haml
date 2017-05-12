@@ -1,0 +1,40 @@
+.container
+  %section.content-main
+    .center-block
+      .col-md-10.col-xs-offset-1
+        / search box
+        = form_tag "/items/trend/#{@genre}", method: :get do
+          .input-group
+            = text_field_tag :search_word, '', class: 'form-control', placeholder: '項目検索'
+            %span.input-group-btn
+              %button.btn.btn-pink{:type => "submit"}
+                %i.glyphicon.glyphicon-search
+%br/
+.container
+  .center-block
+    .col-md-8.col-xs-offset-2
+      %ul.nav.nav-pills.nav-justified
+        - if @genre == 'hot'
+          %li= link_to 'NEW', trend_items_path('new', search_word: @search_word)
+          %li.active= link_to 'HOT', trend_items_path('hot', search_word: @search_word)
+        - else
+          %li.active= link_to 'NEW', trend_items_path('new', search_word: @search_word)
+          %li= link_to 'HOT', trend_items_path('hot', search_word: @search_word)
+%br/
+.container
+  .row
+    %section#pinBoot
+      / content
+      - @items.each do |item|
+        %article.white-panel
+          = link_to '', data: {toggle: :modal, target: '#item_detail', id: item.id, title: item.name, comment: item.comment, done: done_users(item).count, doing: doing_users(item).count} do
+            %h4.item_name= item.name
+            %span.doing
+              doing #{doing_users(item).count}
+            %span.done
+              done #{done_users(item).count}
+          %p
+            = button_tag type: :button, class: "btn btn-pink btn-circle center-block", data: {toggle: :modal, target: '#add_new', id: item.id, title: item.name, comment: item.comment} do
+              %i.fa.fa-plus{"aria-hidden" => "true"}
+= render 'items/add_trend'
+= render 'items/show_trend'

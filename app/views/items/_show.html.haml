@@ -1,0 +1,37 @@
+#show_item.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg
+    .modal-content.show_item
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#item_name.modal-title
+          %i.fa.fa-trash-o{"aria-hidden" => "true"}
+          = succeed "\u{a0}" do
+            %i.fa.fa-sticky-note-o{"aria-hidden" => "true"}
+      .modal-body
+        .comment
+          %h4#item_name
+            %i.fa.fa-check-circle-o{"aria-hidden" => "true"}
+          %p#item_comment
+        .row
+          .col-sm-4
+            %dl.modal_status
+              %dt
+                %i.fa.fa-calendar{"aria-hidden" => "true"}
+              %dd deadline
+              %span#item_deadline
+          .col-sm-4
+            %dl.modal_status
+              %dt
+                %i.fa.fa-thermometer-half{"aria-hidden" => "true"}
+              %dd status
+              %span#status
+          .col-sm-4
+            %dl.modal_status
+              %dt
+                %i.fa.fa-star{"aria-hidden" => "true"}
+              %dd ワクワク度
+              / 0-1の画像で出し分け
+              %img#wkwk{:src => "#"}/
+      %br/
+      %br/

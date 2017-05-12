@@ -1,0 +1,28 @@
+#item_detail.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg
+    .modal-content.show_trend
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4.modal-title
+          %i.fa.fa-plus-circle{"aria-hidden" => "true"}
+      .modal-body
+        .comment
+          %h4.modal-title
+          %p#item_comment
+        %br/
+        .row
+          .col-sm-6
+            %dl.modal_status
+              %a#doing{:href => ""}
+                %dt
+                  %i.fa.fa-file-text-o{"aria-hidden" => "true"}
+                %dd doingユーザ一覧
+                %span#doing
+          .col-sm-6
+            %dl.modal_status
+              %a#done{:href => ""}
+                %dt
+                  %i.fa.fa-check{"aria-hidden" => "true"}
+                %dd 達成ユーザ一覧
+                %span#done

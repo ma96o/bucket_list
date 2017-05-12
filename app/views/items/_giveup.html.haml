@@ -1,0 +1,19 @@
+#trash_item.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4
+          %i.fa.fa-trash-o{"aria-hidden" => "true"}>
+           GIVEUP!
+      %form{:action => "#", :method => "post"}
+        .modal-body
+          %p.modal-title
+          %p GiveUpコメントを入力して下さい。
+          %textarea.form-control{:name => "comment", :placeholder => "give upコメントを入力してください", :rows => "6", :type => "text"}
+          %input#hidden{:name => "id", :type => "hidden"}/
+        .modal-footer
+          %button#modal-save.btn.btn-pink{:type => "submit"}
+            %i.fa.fa-trash-o{"aria-hidden" => "true"}>
+             ゴミ箱へ
