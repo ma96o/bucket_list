@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'users/:user_id/success' => 'items#success'
   get 'users/:user_id/trash' => 'items#trash'
-  get 'items/trend/:hot_new' => 'items#trend'
+  get 'items/trend/:hot_new' => 'items#trend', as: 'trend_items'
   get 'users/:item_id/done' => 'users#done'
   get 'users/:item_id/doing' => 'users#doing'
   get 'users/:user_id/following' => 'users#following'

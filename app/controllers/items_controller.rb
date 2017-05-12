@@ -19,8 +19,20 @@ class ItemsController < ApplicationController
 
   def trend
     @genre = params[:hot_new]
-    if @genre == "new"
-      @items = Item.where(parent_id: nil).order('created_at DESC')
+    if @search_word = params[:search_word]
+      if @genre == 'new'
+        @items = Item.where('id = parent_id AND name LIKE ?', "%#{@search_word}%").order('created_at DESC')
+      elsif @genre == 'hot'
+        item_ids = Item.group(:parent_id).where('name LIKE(?)', "%#{@search_word}%").order('count_parent_id DESC').count(:parent_id).keys
+        @items = item_ids.map{ |id| Item.find id }
+      end
+    else
+      if @genre == 'new'
+        @items = Item.where('id = parent_id').order('created_at DESC')
+      elsif @genre == 'hot'
+        item_ids = Item.group(:parent_id).order('count_parent_id DESC').count(:parent_id).keys
+        @items = item_ids.map{ |id| Item.find id }
+      end
     end
   end
 

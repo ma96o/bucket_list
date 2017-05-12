@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
   def done
-    @users = User.where(id: 1)
+    item = Item.find(params[:item_id])
+    child_items = Item.includes(:user).where(parent_id: item, status: 2)
+    @users = child_items.map{ |item| item.user }
   end
 
   def doing
-    @users = User.where(id: 1)
+    item = Item.find(params[:item_id])
+    child_items = Item.includes(:user).where(parent_id: item, status: 1)
+    @users = child_items.map{ |item| item.user }
   end
 
   def follower
