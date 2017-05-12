@@ -1,0 +1,34 @@
+#item_trash.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg
+    .modal-content.show_trash
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4.modal-title
+          %i.fa.fa-trash-o{"aria-hidden" => "true"}
+      .modal-body
+        .comment
+          %h4#item_name
+            %i.fa.fa-check-circle-o{"aria-hidden" => "true"}
+          %p#item_comment
+        .row
+          .col-sm-4
+            %dl.modal_status
+              %dt
+                %i.fa.fa-calendar{"aria-hidden" => "true"}
+              %dd 捨てた日
+              %span#item_created
+          .col-sm-4
+            %dl.modal_status
+              %dt
+                %i.fa.fa-thermometer-half{"aria-hidden" => "true"}
+              %dd status
+              %span giveup
+          .col-sm-4
+            %dl.modal_status
+              %dt
+                %i.fa.fa-star{"aria-hidden" => "true"}
+              %dd ワクワク度
+              %img#wkwk{:src => ""}/
+      %br/
+      %br/

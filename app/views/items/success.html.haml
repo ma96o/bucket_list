@@ -1,0 +1,24 @@
+.container-fluid
+  .row
+    %section.col-sm-10.col-xs-offset-1.main-content
+      / 項目一覧
+      %ul.list-unstyled
+        - @items.each.with_index(1) do |item, i|
+          %a{"data-comment" => "#{item.comment}", "data-created" => "#{item.created_at}", "data-id" => "#{item.id}", "data-name" => "item_id", "data-priority" => "#{item.priority}", "data-target" => "#item_success", "data-title" => "#{item.name}", "data-toggle" => "modal", :href => ""}
+            %li
+              = i
+              %dl
+                %dt.success= item.name
+                - if true
+                  %dd
+                    %a{"data-comment" => "#{item.comment}", "data-id" => "#{item.id}", "data-target" => "#edit_success", "data-title" => "#{item.name}", "data-toggle" => "modal", :href => ""}
+                      %i.fa.fa-pencil{"aria-hidden" => "true"}
+                %p
+                  %i.fa.fa-calendar{"aria-hidden" => "true"}>
+                    #{item.created_at}
+/ modal item_success
+/ <?php include('views/items/show_success.php'); ?>
+= render 'items/show_success'
+/ modal edit_success
+/ <?php include('views/items/edit_success.php'); ?>
+= render 'items/edit_success'

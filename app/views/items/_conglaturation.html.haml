@@ -1,0 +1,19 @@
+#success_item.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4
+          %i.fa.fa-check{"aria-hidden" => "true"}>
+           CONGLATURATION!
+      %form{:action => "#", :method => "post"}
+        .modal-body
+          %p.modal-title
+          %p 達成おめでとうございます。達成コメントを入力して下さい。
+          %textarea.form-control{:name => "comment", :placeholder => "達成コメントを入力してください", :rows => "6", :type => "text"}
+          %input#hidden{:name => "id", :type => "hidden"}/
+        .modal-footer
+          %button#modal-save.btn.btn-pink{:type => "submit"}
+            %i.fa.fa-check{"aria-hidden" => "true"}>
+             達成

@@ -1,0 +1,44 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title BucketList
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = render 'layouts/header'
+    .container
+      %section.content-main.info
+        .row
+          .col-md-10.col-xs-offset-1
+            %img.center-block.img-responsive.img-circle{:alt => "", :height => "150", :src => "/plofile_fb_n.jpg", :width => "150"}/
+            %h3
+              hoge田hoge夫
+              - if false
+                %span.edit_info
+                  %a{:href => "#"}
+                    %i.fa.fa-pencil{"aria-hidden" => "true"}
+              - elsif true
+                %a.btn.btn-pink{:href => "#"} フォロー
+              - elsif false
+                %a.btn.btn-pink{:href => "#"} フォローを外す
+            %p こんちゃーヨロシャスー
+      / タブ
+      %section.row
+        .col-md-8.col-xs-offset-2
+          %ul.nav.nav-pills.nav-justified
+            %li.active
+              %a{:href => "#"} バケットリスト
+            %li
+              %a{:href => "#"} 達成リスト
+            %li
+              %a{:href => "#"} ゴミ箱リスト
+            %li
+              %a{:href => "#"} フォロー 21
+            %li
+              %a{:href => "#"} フォロワー 23
+      %br/
+      = yield
+    %footer.container-fluid{:style => "min-height:200px; background-color:#00bcd4;color:#fff;text-align:center;padding-top:50px;"}
+      BUCKET LISTS

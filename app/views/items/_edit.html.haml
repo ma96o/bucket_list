@@ -1,0 +1,28 @@
+#edit_item.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg
+    .modal-content.edit_item
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4.modal-title
+          %i.fa.fa-sticky-note-o{"aria-hidden" => "true"}
+      .modal-body
+        %form{:action => "#", :method => "post"}
+          .form-group
+            %label{:for => "exampleInput3"} 内容詳細
+            %input#comment.form-control{:name => "comment", :type => "text"}/
+          %label リスト選択
+          %select#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :name => "list_id", :type => "button"}
+            list
+            %span.caret
+            - current_user.lists.each do |list|
+              %option{:value => "#{list.id}"}= list.name
+          %br/
+          .form-group
+            %label{:for => "exampleInput1"} 期限
+            %input#deadline.form-control{:name => "deadline", :type => "date"}/
+          %label わくわく度
+          #exampleInput2.starRating
+          %input#hidden{:name => "id", :type => "hidden"}/
+          .modal-footer
+            %button#modal-save.btn.btn-pink{:type => "submit"} 更新

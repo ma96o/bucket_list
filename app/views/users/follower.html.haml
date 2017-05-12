@@ -1,0 +1,31 @@
+/ フォローされている人の一覧
+.container
+  .container-fluid
+    .row
+      .content-main
+        %section.col-sm-8.col-xs-offset-2.main-content
+          .follow_follower_list
+            %h4
+              %i.fa.fa-user-circle{"aria-hidden" => "true"}
+              follower
+            %ul.list-unstyled
+              - @users.each do |user|
+                - if false
+                  %a{:href => "#"}
+                    %li.follow_followers
+                      %img.img-circle{:height => "50", :src => "/plofile_fb_n.png", :width => "50"}/
+                      %span= user.name
+                      %a.btn.btn-pink{:href => "#", :style => "float: right;"}
+                        フォロー
+                - elsif current_user.id == user.id
+                  %a{:href => "#"}
+                    %li.follow_followers
+                      %img.img-circle{:height => "50", :src => "/plofile_fb_n.png", :width => "50"}/
+                      %span= user.name
+                - else
+                  %a{:href => "#"}
+                    %li.follow_followers
+                      %img.img-circle{:height => "50", :src => "#", :width => "50"}/
+                      %span= user.name
+                      %a.btn.btn-default{:href => "#", :style => "float: right;"}
+                        フォローを外す

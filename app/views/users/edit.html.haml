@@ -1,0 +1,21 @@
+.container
+  %section.content-main.info
+    %form{:action => "#", :enctype => "multipart/form-data", :method => "post", :role => "form"}
+      .row
+        .col-md-10.col-xs-offset-1
+          %img.center-block.img-responsive.img-circle{:alt => "", :height => "150", :src => "/plofile_fb_n.jpg", :width => "150"}/
+        %br/
+        %br/
+        .col-xs-4.col-xs-offset-4
+          %input.form-control{:name => "picture_path", :type => "file", :value => ""}/
+          / div class="preview" /
+          %h3
+            %input.form-control{:name => "nick_name", :type => "text", :value => ""}/
+        .col-xs-8.col-xs-offset-2
+          %p
+            %input.form-control{:name => "description", :placeholder => "一言コメントを入力してください", :type => "text", :value => ""}/
+      %br/
+      .col-xs-8.col-xs-offset-2
+        %button.btn.btn-pink{:style => "float:right;", :type => "submit"} 更新する
+      %br/
+      %br/

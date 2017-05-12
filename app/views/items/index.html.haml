@@ -1,0 +1,90 @@
+.container-fluid
+  .row{:style => "background-color:#fafafa;"}
+    / sidebar 左ページ リスト一覧
+    %section.col-sm-4.sidebar
+      %ul.list-unstyled
+        - @lists.each do |list|
+          = link_to user_list_items_path(@user, list) do
+            %li.active
+              = list.name
+              - if true
+                %p
+                  %a#button{"data-id" => "#{list.id}", "data-target" => "#edit_list", "data-title" => "#{list.name}", "data-toggle" => "modal", :href => ""}
+                    %i.fa.fa-pencil{"aria-hidden" => "true"}
+      - if true
+        %button.btn.btn-pink{"data-target" => "#add_list", "data-toggle" => "modal", :type => "button"} リストを追加
+    / main 右ページ 項目一覧
+    %section.col-sm-8.main-content
+      / 項目追加
+      - if true
+        /
+          form method="post" action="">
+          <div class="input-group">
+          <input type="text" class="form-control" placeholder="+項目を追加する">
+          <span class="input-group-btn">
+          <button class="btn btn-pink" type="button" data-toggle="modal" data-target="#add_new" data-name="item_id">add</button>
+          </span>
+          </div>
+          </form
+        %br/
+        %button.btn.btn-pink.btn-block{"data-target" => "#add_new", "data-toggle" => "modal", :type => "button"} +項目を追加する
+        %br/
+      / 項目一覧
+      %ul.list-unstyled
+        - @items.each.with_index(1) do |item, i|
+          %a{"data-comment" => "#{item.comment}", "data-deadline" => "#{item.dead_line}", "data-id" => "#{item.id}", "data-priority" => "#{item.priority}", "data-status" => "#{item.status == 1 ? 'doning' : 'done'}", "data-target" => "#show_item", "data-title" => "#{item.name}", "data-toggle" => "modal", :href => ""}
+            %li
+              %dl
+                - if item.status == 2
+                  %dt.success
+                - elsif item.status == 3
+                  %dt.trash
+                - else
+                  %dt
+                %span= i
+                = item.name
+                - if true && item.status == 1
+                  %dd
+                    %a{"data-comment" => "#{item.comment}", "data-deadline" => "#{item.dead_line}", "data-id" => "#{item.id}", "data-priority" => "#{item.priority}", "data-target" => "#edit_item", "data-title" => "#{item.name}", "data-toggle" => "modal", :href => ""}
+                      %i.fa.fa-pencil{"aria-hidden" => "true"}
+                  %dd
+                    %a{"data-id" => "#{item.id}", "data-target" => "#trash_item", "data-title" => "#{item.name}", "data-toggle" => "modal", :href => ""}
+                      %i.fa.fa-trash-o{"aria-hidden" => "true"}
+                  %dd
+                    %a{"data-id" => "#{item.id}", "data-target" => "#success_item", "data-title" => "#{item.name}", "data-toggle" => "modal", :href => ""}
+                      %i.fa.fa-check-circle-o{"aria-hidden" => "true"}
+              .status-icon
+                %p.calendar= item.dead_line
+                - if true #そのitemをいいねしてる
+                  %p
+                    %a{:href => "#"}
+                      %i.fa.fa-smile-o{"aria-hidden" => "true"}>
+                       4
+                - else
+                  %p
+                    %a{:href => "#"}
+                      %i.fa.fa-smile-o{"aria-hidden" => "true", :style => "color:#00bcd4;"}>
+                       6
+                %p
+                  %img{:src => "#"}/
+/ modal add_new
+/ <?php include('views/items/add.php'); ?>
+= render 'items/add'
+/ modal add_list
+/ <?php include('views/lists/add.php'); ?>
+= render 'lists/add'
+/ modal edit_list
+/ <?php include('views/lists/edit.php'); ?>
+= render 'lists/edit'
+/ modal success_item
+/ <?php include('views/items/conglaturation.php'); ?>
+= render 'items/conglaturation'
+/ modal giveup_item
+/ <?php include('views/items/giveup.php'); ?>
+= render 'items/giveup'
+/ modal edit_item
+/ <?php include('views/items/edit.php'); ?>
+= render 'items/edit'
+/ modal show_item
+/ <?php include('views/items/show.php'); ?>
+= render 'items/show'
