@@ -1,0 +1,963 @@
+
+/*---all----------------------------------------------------*/
+
+body{
+  background-color: #eee;
+}
+
+
+a,
+a:hover,
+a:focus{
+  text-decoration: none;
+  outline: none;
+  color: #5e5e5e;
+}
+
+span.blue{
+  display: block;
+  color:#0097a7;
+  padding-top: 5px;
+}
+
+span.blue:before{
+  font-family: FontAwesome;
+  content: '\f06a'; /* アイコンのunicode */
+  margin-right: 10px;
+  margin-left: 5px;
+  color:#0097a7;
+}
+
+
+/*---ギザギザ----------------------------------------------------*/
+
+.offset {
+  background: #f9f9f9;
+}
+.jagged-border {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding-top: 20px;
+}
+.jagged-border:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 10px;
+}
+.yellow-bg {
+  background: #FFE599;
+}
+.yellow-bg:before {
+  background: -webkit-linear-gradient(45deg, transparent 33.333%, #FFE599 33.333%, #FFE599 66.667%, transparent 66.667%), -webkit-linear-gradient(135deg, transparent 33.333%, #FFE599 33.333%, #FFE599 66.667%, transparent 66.667%);
+  background: linear-gradient(45deg, transparent 33.333%, #ecf0f1 33.333%, #FFE599 66.667%, transparent 66.667%), linear-gradient(-45deg, transparent 33.333%, #FFE599 33.333%, #FFE599 66.667%, transparent 66.667%);
+  background-size: 20px 40px;
+}
+.pink-bg {
+  background: #FFBFBF;
+}
+.pink-bg:before {
+  background: -webkit-linear-gradient(45deg, transparent 33.333%, #FFBFBF 33.333%, #FFBFBF 66.667%, transparent 66.667%), -webkit-linear-gradient(135deg, transparent 33.333%, #FFBFBF 33.333%, #FFBFBF 66.667%, transparent 66.667%);
+  background: linear-gradient(45deg, transparent 33.333%, #FFBFBF 33.333%, #FFBFBF 66.667%, transparent 66.667%), linear-gradient(-45deg, transparent 33.333%, #FFBFBF 33.333%, #FFBFBF 66.667%, transparent 66.667%);
+  background-size: 20px 40px;
+}
+.blue-bg {
+  background: #BFEFFF;
+}
+.blue-bg:before {
+  background: -webkit-linear-gradient(45deg, transparent 33.333%, #BFEFFF 33.333%, #BFEFFF 66.667%, transparent 66.667%), -webkit-linear-gradient(135deg, transparent 33.333%, #BFEFFF 33.333%, #BFEFFF 66.667%, transparent 66.667%);
+  background: linear-gradient(45deg, transparent 33.333%, #BFEFFF 33.333%, #BFEFFF 66.667%, transparent 66.667%), linear-gradient(-45deg, transparent 33.333%, #BFEFFF 33.333%, #BFEFFF 66.667%, transparent 66.667%);
+  background-size: 20px 40px;
+}
+
+
+
+/*---home----------------------------------------------------*/
+
+.navbar-header a{
+  font-family: 'Rancho';
+}
+
+.bg{
+  background-image:url("/bucket_lists/views/image/home2.jpg"); 
+  background-size: cover; 
+  min-height: 600px;
+}
+
+.site_info h1{
+  color:#5e5e5e;
+  font-size: 60px;
+  /*letter-spacing: 1px;*/
+  /*font-family: 'Cabin Sketch', cursive;*/
+  font-family: 'Rancho';
+  /*font-family: 'Special Elite', cursive;*/
+  /*font-family: 'Droid Serif', serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;*/
+}
+
+.site_info p{
+  color:#fff;
+  font-size: 16px;
+}
+.side_content {
+  margin: 5px auto;
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+}
+
+.side_content h4{
+  color:#888;
+  margin: 0 0 10px 0;
+  font-size: 15px;
+}
+
+.side_content h4 i{
+  color: #00bcd4;
+}
+
+.side_content p{
+  color:#888;
+  font-size: 13px;
+}
+
+.side_content p{
+  color:#888;
+}
+
+.side_content .pd{
+  margin-bottom: 10px;
+}
+
+.side_content p.bl{
+  font-weight: bold;
+}
+.side_content .action_icons{
+  color: #888;
+  border-bottom: 1px dotted #888;
+  padding-bottom: 15px;
+}
+
+.bg_middle{
+  background-image:url("/bucket_lists/views/image/home.jpg"); 
+  background-size: cover; 
+  min-height: 800px;
+}
+
+
+
+/*---profile----------------------------------------------------*/
+
+.info{
+  margin-bottom: 15px;
+}
+.info h3{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.info h3 .name{
+  font-size: 25px;
+}
+
+.info h3 .button{
+  vertical-align: -3px;
+}
+
+.info p{
+  text-align: center;
+}
+
+.info span{
+  margin-left: 30px;
+  font-size: 16px;
+}
+
+.info img{
+  margin-bottom: 20px;
+}
+
+/*.file {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding: .5em;
+}
+
+.file input[type="file"] {
+  opacity: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+  font-size: 100px;
+  cursor: pointer;
+}
+
+.preview{
+  border-radius: 50px;
+  height: 150px;
+  width: 150px;
+  text-align: center;
+
+}*/
+
+/*---tab----------------------------------------------------*/
+
+.nav-pills li{
+  margin: 15px auto;
+  letter-spacing: -1px;
+  font-size: 13px;
+}
+
+.nav-pills li i{
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.nav-pills li a{
+    border-radius:0;
+    color: #555;
+    font-weight: bold;
+}
+
+.nav-pills li.active a,
+.nav-pills li.active a:hover,
+.nav-pills li.active a:focus {
+    background: #eee;
+    color: #333;
+    border-radius: none !important;
+    border-bottom: 5px #00BCD4 solid;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/*---page_default----------------------------------------------------*/
+
+.timeline_list,
+.follow_follower_list{
+  margin: 10px auto;
+}
+
+.timeline_list h4,
+.follow_follower_list{
+  color:#5e5e5e;
+}
+
+.timeline_list h4 i,
+.follow_follower_list h4 i{
+  padding-left: 15px;
+  color: #00bcd4;
+}
+
+/*---timeline----------------------------------------------------*/
+
+.timeline{
+  padding: 10px;
+  border-bottom: 1px dotted #5e5e5e;
+  clear: both;
+  color:#888;
+}
+
+.timeline{
+  background-color: #f5f5f5;
+}
+
+.timeline.bg_w{
+  background-color: #fafafa;
+}
+
+.timeline img{
+  float: left;
+  margin-right: 10px;
+}
+
+.timeline p.name{
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.timeline p.name a{
+  color: #0097a7;
+}
+
+.timeline p.date{
+  color:#888;
+  font-size: 12px;
+  margin-bottom: 0; 
+}
+
+.timeline span.detail_trash:before,
+.timeline span.detail_done:before,
+.timeline span.detail_doing:before{
+  margin-right: 10px;
+  color:#888;
+}
+
+.timeline span.detail_trash a,
+.timeline span.detail_done a,
+.timeline span.detail_doing a{
+  color: #0097a7;
+  font-size: 13px;
+}
+
+
+.timeline span.detail_trash:before{
+  font-family: FontAwesome;
+  content: '\f014'; /* アイコンのunicode */  
+}
+
+.timeline span.detail_done:before{
+  font-family: FontAwesome;
+  content: '\f00c'; /* アイコンのunicode */
+}
+
+.timeline span.detail_doing:before{
+  font-family: FontAwesome;
+  content: '\f0f6'; /* アイコンのunicode */
+}
+
+
+
+/*---item_detail----------------------------------------------------*/
+
+.item {
+  margin: 10px auto;
+  padding: 15px;
+}
+
+.item h4{
+  color:#5e5e5e;
+}
+
+.item h4 i{
+  padding-left: 10px;
+  color: #00bcd4;
+}
+
+.item label{
+  color:#888;
+  display: block;
+}
+
+.item p{
+  color:#888;
+}
+
+.item p.bl{
+  font-weight: bold;
+}
+.item .action_icons{
+  color: #888;
+  border-bottom: 1px dotted #888;
+  padding-bottom: 15px;
+}
+
+.item hr{
+  border: 1px dotted #888;
+}
+
+.item_detail label{
+  color:#5e5e5e;
+}
+
+
+/*---sidebar(mypage)----------------------------------------------------*/
+
+.sidebar{
+  background-color: #fafafa;
+}
+
+.sidebar ul{
+  padding: 10px;
+}
+
+.sidebar li{
+  line-height: 2.8em;
+  font-size: 16px;
+  padding: 5px;
+
+}
+
+.sidebar p{
+  float: right;
+}
+
+.sidebar li:before {
+  font-family: FontAwesome;
+  content: '\f0ca'; /* アイコンのunicode */
+  margin-right: 10px;
+  color:#888;
+}
+
+.sidebar li:hover,
+.sidebar li:focus,
+.sidebar li.active{
+  background-color: #b2edf2;
+}
+
+/*---main-content(mypage)----------------------------------------------------*/
+
+.main-content{
+  background-color: #f5f5f5;
+  padding:10px;
+}
+
+/*.main-content ul{
+  margin-top: 10px;
+}*/
+
+.main-content li{
+  padding: 10px;
+  border-bottom: 1px dotted #5e5e5e;
+}
+
+.main-content li dl{
+  margin-bottom: 8px;
+}
+
+.main-content li dt{
+font-weight: 400;
+display: inline;
+color:#888;
+font-size: 16px;
+}
+
+.main-content li dt span,
+.main-content li dt.doing span,
+.main-content li dt.success span,
+.main-content li dt.trash span{
+  font-size: 14px;
+  background: #00bcd4;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  margin-right: .3em;
+  line-height: 1.9em;
+}
+
+.main-content li dt.doing:before{
+  display: inline;
+  font-family: FontAwesome;
+  content: '\f0f6';
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+
+.main-content li dt.success:before{
+  display: inline;
+  font-family: FontAwesome;
+  content: '\f00c'; /* アイコンのunicode */
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.main-content li dt.success span{
+  background: #ff4081;
+}
+
+.main-content li dt.trash:before{
+  display: inline;
+  font-family: FontAwesome;
+  content: '\f014'; /* アイコンのunicode */
+  font-size: 20px;
+  margin: 0 10px 0 4.3px;
+}
+
+.main-content li dt.trash span{
+  background: #888;
+}
+
+.main-content li dd{
+  float: right;
+  margin-left: 15px;
+  font-size: 17px;
+}
+
+.main-content div.status-icon{
+  overflow: hidden;
+  margin-left: 5px;
+}
+.main-content div.status-icon p,
+.main-content div.status-icon p a{
+  display: inline;
+  font-size: 14px;
+  color:#888;
+  margin-right: 10px;
+}
+
+.main-content div.status-icon p.calendar:before{
+  font-family: FontAwesome;
+  content: '\f073'; /* アイコンのunicode */
+  padding-right: 5px;
+}
+
+/*
+.main-content div.status-icon p.like:before{
+  font-family: FontAwesome;
+  content: '\f118';
+  padding-right: 5px;
+}
+
+.main-content div.status-icon p.unlike:before{
+  font-family: FontAwesome;
+  content: '\f11a';
+  padding-right: 5px;
+}
+*/
+.main-content div.status-icon p img{
+  width:85px;
+  vertical-align: top;
+}
+
+.main-content li i:hover,
+.main-content li i:focus{
+  color: #00BCD4;
+}
+
+/*---follow follower----------------------------------------------------*/
+
+    
+.follow_follower{
+  padding: 10px;
+  border-bottom: 1px dotted #5e5e5e; 
+}
+
+.follow_follower a{
+  display: inline-block;
+}
+
+.follow_follower img{
+  display: inline;
+  margin-right: 10px;
+}
+
+.follow_follower p{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.follow_list {
+  margin-top: 10px;
+}
+
+.follow_list div{
+  padding: 10px;
+  border-bottom: 1px dotted #5e5e5e;
+}
+
+.follow_list img{
+  display: inline;
+  margin-right: 10px;
+}
+
+.follow_list span{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/*
+.follow_list a:hover,
+.follow_list a:focus{
+ background-color: #b2edf2; 
+}
+*/
+
+/*---doing done----------------------------------------------------*/
+
+.do_list {
+  margin-top: 10px;
+}
+
+.do_list h4{
+  color:#5e5e5e;
+}
+
+.do_list h4 i{
+  padding-left: 15px;
+  color: #00bcd4;
+}
+
+.do_list div{
+  padding: 10px;
+  border-bottom: 1px dotted #5e5e5e;
+}
+
+.do_list img{
+  display: inline;
+  margin-right: 10px;
+}
+
+.do_list span{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.do_list div:hover,
+.do_list div:focus{
+ background-color: #b2edf2; 
+}
+
+
+
+/*---add btn----------------------------------------------------*/
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+/*---btn pink----------------------------------------------------*/
+
+.btn-pink {
+  color: #ffffff;
+  background-color: #ff4081;
+  border-color: #ff4081;
+}
+.btn-pink:hover,
+.btn-pink:focus,
+.btn-pink:active,
+.btn-pink.active,
+.open .dropdown-toggle.btn-pink {
+  color: #ffffff;
+  background-color: #ff4081;
+  border-color: #ff4081;
+}
+.btn-pink:active,
+.btn-pink.active,
+.open .dropdown-toggle.btn-pink {
+  background-image: none;
+}
+.btn-pink.disabled,
+.btn-pink[disabled],
+fieldset[disabled] .btn-pink,
+.btn-pink.disabled:hover,
+.btn-pink[disabled]:hover,
+fieldset[disabled] .btn-pink:hover,
+.btn-pink.disabled:focus,
+.btn-pink[disabled]:focus,
+fieldset[disabled] .btn-pink:focus,
+.btn-pink.disabled:active,
+.btn-pink[disabled]:active,
+fieldset[disabled] .btn-pink:active,
+.btn-pink.disabled.active,
+.btn-pink[disabled].active,
+fieldset[disabled] .btn-pink.active {
+  background-color: #ff4081;
+  border-color: #ff4081;
+}
+
+/*---img circel----------------------------------------------------*/
+
+.thumbnail_circle img {
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+}
+
+/*---modal----------------------------------------------------*/
+
+.modal-lg{
+  width:70%;
+}
+
+.modal-content{
+   color:#888;
+   background-color: #fafafa;
+}
+
+.modal-content h4{
+  font-size: 15px;
+}
+
+.modal-content h4 i{
+  color:#00bcd4;
+}
+
+/*conglaturation*/
+.modal-content p.modal-title{
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.modal-content div .comment{
+  word-wrap: break-word;
+  background-color: #FFF;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.modal-content p.modal-title:before{
+  font-family: FontAwesome;
+  content: '\f0f6'; /* アイコンのunicode */
+  padding-right: 5px;
+  color:#00bcd4;
+}
+
+.modal-content .starRating img{
+  width: 20px;
+}
+
+.modal-content .modal_status{
+  margin: 5px;
+  /*vertical-align: */
+  clear: both;
+}
+
+.modal-content dl{
+  margin-bottom: 0px;
+}
+
+.modal-content .modal_status dt{
+  font-size: 45px;
+  float: left;
+}
+
+.modal-content .modal_status dd{
+  display: block;
+  padding-top: 15px;
+  margin-left: 50px;
+  color:#ababab;
+}
+
+.modal-content .item_success dd{
+  display: block;
+  margin-left: 50px;
+  color:#ababab;
+}
+
+.modal-content .modal_status img{
+  width:85px;
+}
+
+.modal-content .modal_status span{
+  display: block;
+  margin-left: 50px;
+}
+
+.show_item h4:before{
+  font-family: FontAwesome;
+  content: '\f0f6'; /* アイコンのunicode */
+  padding-right: 5px;
+  color:#00bcd4;
+}
+
+.item_success h4:before{
+  font-family: FontAwesome;
+  content: '\f00c'; /* アイコンのunicode */
+  padding-right: 5px;
+  color:#00bcd4; 
+}
+
+.show_trend h4:before{
+  font-family: FontAwesome;
+  content: '\f055'; /* アイコンのunicode */
+  padding-right: 5px;
+  color:#00bcd4; 
+}
+
+.edit_item h4:before{
+  font-family: FontAwesome;
+  content: '\f040'; /* アイコンのunicode */
+  padding-right: 5px;
+  color:#00bcd4;
+}
+
+.modal-box{
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  padding: 15px;
+}
+
+/*---star----------------------------------------------------*/
+
+/*.starRating img{
+  width:auto;
+}*/
+
+/*---footer----------------------------------------------------*/
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+ 
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
+}
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+  }
+}
+
+#footer {
+  background-color: #00bcd4;
+  text-align: center;
+  color:#fff;
+  padding-top:20px; 
+}
+
+
+
+/*.footer{
+  margin-top: 50px;
+  background-color:#00bcd4;
+  text-align:center;
+  padding-top:20px;
+  padding-bottom: 20px;
+  color:#fff;
+}*/
+
+
+
+
+
+
+
+
+header {
+    text-align: center;
+/*    color: #fff;
+    background: #18bc9c;
+*/
+    /*position: fixed;*/
+    width:100%;
+    z-index: 1;
+    height: 88%;
+    /*overflow: hidden;*/
+    top: 0;
+    left: 0;
+}
+
+.content-wrapper{
+    background-color: white;
+    top: 87%;
+    min-height: 12%;
+    /*position:absolute;*/
+    z-index: 2;
+    width: 100%;
+}
+
+header .container {
+    padding-top: 100px;
+    /*padding-bottom: 50px;*/
+}
+
+header img {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.intro-text {
+    margin-bottom: 50px;
+}
+
+.intro-text .name {
+    display: block;
+    /*text-transform: uppercase; ←大文字に変換する*/
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.intro-text .skills {
+    font-size: 1.25em;
+    font-weight: 300;
+}
+
+
+nav.navbar,
+nav.navbar-default {
+    background-color: white;
+}
+
+/* メッセージ部分のデザイン */
+.msg {
+  clear: both;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.msg img {
+  float: left;
+  margin-right: 5px;
+
+}
+
+.msg p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.msg .day,
+.msg .day a {
+  font-size: 80%;
+  color: #999;
+}
+
+#pf-top {
+    background-color: white;
+}
+
+
+
+.content-main {
+  padding-top: 80px;
+  padding-bottom: 0px;
+  /*background-color: rgb(240, 240, 240);*/
+}
+
+.content-margin-top {
+    background-color: white;
+    padding: 30px;
+}
+

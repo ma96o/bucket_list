@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  comment: MyText
+  dead_line: 2017-04-28 18:14:46
+  status: 1
+  priority: 1
+  user_id: 1
+  list_id: 1
+
+two:
+  name: MyString
+  comment: MyText
+  dead_line: 2017-04-28 18:14:46
+  status: 1
+  priority: 1
+  user_id: 1
+  list_id: 1

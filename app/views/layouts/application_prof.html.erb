@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BucketList</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+  <%= render 'layouts/header' %>
+
+    <div class="container">
+        <section class="content-main info">
+            <div class="row">
+                <div class="col-md-10 col-xs-offset-1">
+                    <img class="center-block img-responsive img-circle" src="/plofile_fb_n.jpg" alt="" width="150" height="150">
+                    <h3>hoge田hoge夫
+                <% if false %>
+                    <span class="edit_info"><a href="#" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    </span>
+                <% elsif true %>
+                    <a href="#" class="btn btn-pink">フォロー</a>
+                <% elsif false %>
+                    <a href="#" class="btn btn-pink">フォローを外す</a>
+                <% end %>
+
+                    </h3>
+                    <p>こんちゃーヨロシャスー</p>
+
+                </div>
+            </div>
+        </section>
+
+        <!--タブ-->
+        <section class="row">
+            <div class="col-md-8 col-xs-offset-2">
+                  <ul class="nav nav-pills nav-justified">
+                    <li class="active"><a href="#">バケットリスト</a></li>
+                    <li><a href="#">達成リスト</a></li>
+                    <li><a href="#">ゴミ箱リスト</a></li>
+                    <li><a href="#">フォロー 21</a></li>
+                    <li><a href="#">フォロワー 23</a></li>
+                  </ul>
+            </div>
+        </section>
+        <br>
+
+
+    <%= yield %>
+
+    </div>
+        <footer class="container-fluid" style="min-height:200px; background-color:#00bcd4;color:#fff;text-align:center;padding-top:50px;">
+            BUCKET LISTS
+        </footer>
+  </body>
+</html>

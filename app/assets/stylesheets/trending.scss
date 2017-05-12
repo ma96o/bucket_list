@@ -1,0 +1,98 @@
+/*
+Ref:
+Thanks to:
+http://www.jqueryscript.net/layout/Simple-jQuery-Plugin-To-Create-Pinterest-Style-Grid-Layout-Pinterest-Grid.html
+*/
+
+i{  
+font-family:FontAwesome;  
+font-style:normal;  
+} 
+
+body {
+ background-color:#eee;   
+}    
+
+#pinBoot {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+#pinBoot a,
+#pinBoot a:hover,
+#pinBoot a:focus{
+  outline: none;
+  text-decoration: none;
+  color:#5e5e5e;
+  display: block;
+}
+
+#pinBoot h4.item_name{
+  padding-bottom:10px;
+  border-bottom: 1px dotted #e1e1e1;
+  word-wrap: break-word;
+
+}
+
+#pinBoot h4.item_name:before{
+  font-family: FontAwesome;
+  content: '\f02e'; /* アイコンのunicode */
+  margin-right: 10px;
+  color:#00bcd4;
+}
+
+#pinBoot span.doing:before{
+  font-family: FontAwesome;
+  content: '\f0f6'; /* アイコンのunicode */
+  margin-right: 10px;
+  color:#00bcd4;
+}
+
+#pinBoot span.done:before{
+  font-family: FontAwesome;
+  content: '\f05d'; /* アイコンのunicode */
+  margin-right: 10px;
+  color:#00bcd4;
+}
+
+#pinBoot p{
+  margin:10px auto 0 auto;
+}
+
+#pinBoot p button:hover,
+#pinBoot p button:focus{
+  outline:none; 
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.white-panel {
+  position: absolute;
+  background: white;
+  /*box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);*/
+  padding: 10px;
+}
+/*
+stylize any heading tags withing white-panel below
+*/
+
+.white-panel h1 {
+  font-size: 1em;
+}
+.white-panel h1 a {
+  color: #A92733;
+}
+.white-panel:hover {
+  /*box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);*/
+  margin-top: -5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+

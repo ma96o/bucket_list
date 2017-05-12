@@ -1,0 +1,109 @@
+
+<div class="container-fluid">
+  <div class="row" style="background-color:#fafafa;">
+    <!--sidebar　左ページ　リスト一覧-->
+    <section class="col-sm-4 sidebar">
+      <ul class="list-unstyled">
+
+      <% @lists.each do |list| %>
+        <a href="#">
+            <li class="active"><%= list.name %>
+            <% if true %>
+            <p><a id="button" data-toggle="modal" href="" data-target="#edit_list" data-title="<%= list.name %>" data-id="<%= list.id %>"><i class="fa fa-pencil" aria-hidden="true"></i></a></p>
+            <% end %>
+            </li>
+        </a>
+      <% end %>
+      </ul>
+      <% if true %>
+      <button class="btn btn-pink" type="button" data-toggle="modal" data-target="#add_list">リストを追加</button>
+      <% end %>
+
+    </section>
+
+    <!--main 右ページ　項目一覧-->
+    <section class="col-sm-8 main-content">
+        <!--項目追加-->
+      <% if true %>
+          <!--form method="post" action="">
+             <div class="input-group">
+                <input type="text" class="form-control" placeholder="+項目を追加する">
+                    <span class="input-group-btn">
+                        <button class="btn btn-pink" type="button" data-toggle="modal" data-target="#add_new" data-name="item_id">add</button>
+                    </span>
+             </div>
+          </form-->
+          <br />
+          <button class="btn btn-pink btn-block" type="button" data-toggle="modal" data-target="#add_new">+項目を追加する</button>
+          <br />
+
+      <% end %>
+        <!--項目一覧-->
+         <ul class="list-unstyled">
+               <% @items.each_with(2) do |item, i| %>
+              <a data-toggle="modal" href="" data-target="#show_item" data-title="<%= item.name %>" data-id="<%= item.id %>" data-comment="<%= item.comment %>" data-deadline="<%= item.deadline %>" <%= # item.status == 1 ? 'data-status="doing"' : 'data-status="done"' %> data-priority="<%= item.priority %>">
+                  <li>
+                      <dl>
+                          <dt><%= # if(item.status == 2){' class="success"'}elsif(item.status == 3){' class="trash"'} %><span><% i %></span><%= item.name %></dt>
+                      <% if false  # true && item.status == 1 %>
+                          <dd>
+                          <a data-toggle="modal" href="" data-target="#edit_item" data-title="<%= item.name %>" data-id="<%= item.id %>" data-comment="<%= item.comment %>" data-deadline="<%= item.deadline %>" data-priority="<%= item.priority %>">
+                          <i class="fa fa-pencil" aria-hidden="true">
+                          </i></a></dd>
+                          <dd><a data-toggle="modal" href="" data-target="#trash_item" data-title="<%= item.name %>" data-id="<%= item.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a></dd>
+                          <dd><a data-toggle="modal" href="" data-target="#success_item" data-title="<%= item.name %>" data-id="<%= item.id %>"><i class="fa fa-check-circle-o" aria-hidden="true"></i></a></dd>
+                      <% end %>
+                      </dl>
+                      <div class="status-icon">
+                          <p class="calendar"><%= item.deadline %></p>
+
+          <% if true #そのitemをいいねしてる？ %>
+                <p><a href="#"><i class="fa fa-smile-o" aria-hidden="true"></i>&nbsp;4</a></p>
+
+          <% else %>
+                <p><a href="#"><i class="fa fa-smile-o" aria-hidden="true" style="color:#00bcd4;"></i>&nbsp;6</a>
+                </p>
+
+          <% end %>
+
+                <p><img src="#"></p>
+                </div>
+            </li>
+        </a>
+        <% end %>
+        </ul>
+
+    </section>
+  </div>
+</div>
+
+
+<!--modal add_new-->
+  <!-- <?php include('views/items/add.php'); ?> -->
+
+<!--modal add_list-->
+<%= render 'lists/add' %>
+
+  <!-- <?php include('views/lists/add.php'); ?> -->
+
+<!--modal edit_list-->
+<%= render 'lists/edit' %>
+
+  <!-- <?php include('views/lists/edit.php'); ?> -->
+
+
+<!--modal success_item-->
+
+  <!-- <?php include('views/items/conglaturation.php'); ?> -->
+
+<!--modal giveup_item-->
+
+  <!-- <?php include('views/items/giveup.php'); ?> -->
+
+ <!--modal edit_item-->
+
+  <!-- <?php include('views/items/edit.php'); ?> -->
+
+ <!--modal show_item-->
+
+  <!-- <?php include('views/items/show.php'); ?> -->
